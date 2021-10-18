@@ -1,0 +1,29 @@
+
+-------------- --------------
+
+create table stay(
+	room_id		 int ,
+	Prisoner_id  int ,
+	primary key(room_id , Prisoner_id)
+);
+
+---------------------------
+create table crime(
+	crime_id     int ,
+	Prisoner_id  int ,
+	primary key(crime_id , Prisoner_id)
+);
+
+---------------------------
+create table support(
+	support_id     int ,
+	Prisoner_id  int ,
+	primary key(support_id , Prisoner_id)
+);
+
+
+---------------------------
+create table Prisoner(
+	Prisoner_id  int ,
+	primary key(Prisoner_id)
+);
