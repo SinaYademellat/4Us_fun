@@ -1,0 +1,4 @@
+------- 5
+select *
+from HW4
+where age BETWEEN  10 AND 15

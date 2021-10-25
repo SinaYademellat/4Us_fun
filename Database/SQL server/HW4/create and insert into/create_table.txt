@@ -1,0 +1,5 @@
+create table HW4(
+	type_   int ,
+	age     int  ,
+	name_  nvarchar(200)  	
+);

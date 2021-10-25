@@ -1,0 +1,11 @@
+----------- 2
+
+select * 
+from HW4
+where name_=N'فاطمه'
+
+-- iRQk < == > test :)
+
+select * 
+from HW4
+where name_='iRQk'

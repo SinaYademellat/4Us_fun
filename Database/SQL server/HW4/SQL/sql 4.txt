@@ -1,0 +1,10 @@
+-------------- 4
+select *
+from HW4
+where name_ like N'%ب'
+
+
+--------------  j  < == > Test
+select *
+from HW4
+where name_ like '%j'

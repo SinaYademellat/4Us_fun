@@ -1,0 +1,3 @@
+SELECT *
+FROM [TMP_Zendan].[dbo].[HW4]
+where age>40

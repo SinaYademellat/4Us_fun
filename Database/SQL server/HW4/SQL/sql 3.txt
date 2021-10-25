@@ -1,0 +1,4 @@
+-------------- 3
+select *
+from HW4
+where type_ =0
