@@ -1,0 +1,14 @@
+function g = t_for_hw_2(f)
+    
+    f = double(f);
+    m  = 100 ;
+    E  = 20 ;
+    
+    f_m = m ./ f ;
+    f_E = f_m .^ E;
+    f_1 = 1 + f_E;
+
+    g = 1./ f_1;
+
+    plot(f(:,:),g(:,:));
+end
