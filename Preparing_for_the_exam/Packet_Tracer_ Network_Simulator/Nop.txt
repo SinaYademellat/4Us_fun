@@ -1,0 +1,73 @@
+	Show running_config
+	show ip route
+
+////////////////////////////////
+
+	hwic-2T --> سریال
+	wIC_1T	--> سریال یک
+	wic_1ENET >	اترنت
+
+////////////////////////////////
+	fa 0/0 --> ip and subnetmax
+	
+interfac fast.. x/y
+ip addr.. IP(W.B.C.D) subnetmax
+no shut..
+
+A : 1 	<= W <= 126  
+B: 128 	<= W <= 191  
+C: 192 	<= W <= 223 
+	
+	NETID = IP "AND" SUBNETMAX
+		
+		SUBNETMAX: /K 11111...111 00 :) 
+		
+	1) دوسریک کابل
+	2) به یک یا چند سویچ 
+	3) interface of ruter must be def...
+	4) HOSTID -->NOT full one or full zero
+
+
+	IP = NETID | HOSTID
+		n(NETID) = n(subnetmax_: /k)
+
+////////////////////////////////////////////////////
+
+	PASS
+	enable password sina
+	enable secret Yad
+
+	(config)# Line vty 0 4
+	?(config)# password X
+	>>>> telnet 20.20.20.1
+	password X 
+
+DefultGe.. >> :)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	Route
+
+	1) ip route 		NETID    SUBNETMAX   NextHub
+		1.0) ip route	0.0.0.0    0.0.0.0   NextHub
+
+	classFull:
+		(1) << rip >>
+			A: /8	B: /16  C: /24
+		
+		route ripe
+			network NETID
+
+	###################################################################################################
+		
+	class less
+		(2) ERIGP
+			route erigp number
+			network " my_interface_ip "  " this->subnetMXT"
+
+		(3) OSPF
+			route ospf number
+			network " my_interface_ip "  " this->subnetMXT" area 0 
+
+
+
+//////////////////////////////////////////////////////////////////////

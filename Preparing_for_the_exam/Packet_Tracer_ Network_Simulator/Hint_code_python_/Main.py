@@ -65,7 +65,7 @@ def run_it_label_k() -> None:
         make_new_root_for_label_k_is(dic_of_prefix_size[input_text])
     else:
         entry_K.delete(0,END)
-        messagebox.showinfo('اشتب وارد کردی  ', '.حاجی چی زدی؟ باید بین 0 تا 255 باشه')
+        messagebox.showinfo('اشتب وارد کردی  ', '.حاجی چی زدی؟ باید بین 0 تا 23 باشه')
 
 def  run_it_netID_time() ->None:
 
@@ -73,6 +73,11 @@ def  run_it_netID_time() ->None:
 
     input_ip_ = entry_ip_.get().split('.')
     input_subnet = entry_subnet_.get().split('.')
+
+    
+    if( (len(input_ip_)==1 and input_ip_[0]=='')  or (len(input_subnet)==1 and (input_subnet[0] == '') ) ):
+        messagebox.showinfo('.ورودی ها خالی هست', ':( .نمی توانم با ورودی خالی را حساب کنم')
+        return
 
     print('input_ip_: ',input_ip_)
     print('input_subnet: ',input_subnet)
@@ -108,9 +113,11 @@ if __name__ =='__main__':
     window.geometry('240x103')
     window.title("30Na") # Sian :)
     
+        # <<  COLOR >> 
     color_of_back_ground = "#2B3A55"
     color_for_Label_K = "#a0e8e6"
-
+    run_color_ = "#40ed6e"
+    del_color_ ="#a82294"
 
     window.configure(background= color_of_back_ground)
 
@@ -118,7 +125,7 @@ if __name__ =='__main__':
     label_K = tk.Label(bg= color_for_Label_K, text="/K",font=('Helvetica 13'))
     entry_K = tk.Entry(bd=2,justify='center',font=('Helvetica 13'))
     
-    run_btn_for_lablel_k = tk.Button( window , bg=  color_for_Label_K ,text = 'Run', command = run_it_label_k )
+    run_btn_for_lablel_k = tk.Button( window , bg=  run_color_ ,text = 'Run', command = run_it_label_k )
 
     label_K.grid(row=0 ,column=0)
     entry_K.grid(row=0, column=1)
@@ -145,10 +152,12 @@ if __name__ =='__main__':
     entry_subnet_.grid(row=5,column=1)
 
         #! button
-    run_btn_manke_NetID  = tk.Button( window , bg=color_for_Label_K ,text = 'Run', command = run_it_netID_time )
+
+    
+    run_btn_manke_NetID  = tk.Button( window , bg=run_color_ ,text = 'Run', command = run_it_netID_time )
     run_btn_manke_NetID.grid(row=4,column=2)
 
-    run_btn_del_NetID_part  = tk.Button( window , bg=color_for_Label_K ,text = 'del', command = delete_netId_part )
+    run_btn_del_NetID_part  = tk.Button( window , bg=del_color_ ,text = 'del', command = delete_netId_part )
     run_btn_del_NetID_part.grid(row=5,column=2)
 
 
